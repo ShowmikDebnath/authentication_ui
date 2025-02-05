@@ -125,10 +125,22 @@ class LoginScreen extends StatelessWidget {
                             width: double.infinity,
                             height: 50,
                             child: ElevatedButton(
-                              style: ElevatedButton.styleFrom(backgroundColor: Colors.green),
+                              style: ElevatedButton.styleFrom(
+                                backgroundColor: Colors.green,
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(10),
+                                ),
+                              ),
                               onPressed: () => authcontroller.Login(),
-                              child: Text("SIGN IN", style: TextStyle(color: Colors.white, fontSize: 16, fontWeight: FontWeight.bold)),
-                            ),
+                              child: Text(
+                                "SIGN UP",
+                                style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 16,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                            )
                           ),
 
                           SizedBox(height: 20),
