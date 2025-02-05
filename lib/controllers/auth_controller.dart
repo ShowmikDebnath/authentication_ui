@@ -5,7 +5,7 @@ class AuthController extends GetxController{
   var isEmailOkay = true.obs;
   var isPasswordOkay = true.obs;
   var isConfirmPassOkay = true.obs;
-  var isTermsAccepted = true.obs;
+  var isTermsAccepted = false.obs;
 
   final nameController = TextEditingController();
   final emailController = TextEditingController();
@@ -94,6 +94,7 @@ class AuthController extends GetxController{
       nameController.clear();
       passController.clear();
       confPassController.clear();
+
 
 
       Get.snackbar(

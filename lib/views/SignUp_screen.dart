@@ -1,4 +1,5 @@
 import 'package:authentication_ui/controllers/auth_controller.dart';
+import 'package:authentication_ui/views/LogIn_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:get/get.dart';
@@ -264,7 +265,7 @@ class SignupScreen extends StatelessWidget {
 
                               ),
                               GestureDetector(
-                                onTap: () => Get.toNamed("/signin"),
+                                onTap: () => Get.to(() => LoginScreen()),
                                 child: Text(" SIGN IN", style: TextStyle(color: Colors.green, fontWeight: FontWeight.bold)),
                               ),
                             ],
