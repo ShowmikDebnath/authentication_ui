@@ -11,9 +11,21 @@ class AuthController extends GetxController{
   final emailController = TextEditingController();
   final passController = TextEditingController();
   final confPassController = TextEditingController();
+  final districtController = TextEditingController();
+  final areaController = TextEditingController();
 
   void toggleTermsAcceptance() {
     isTermsAccepted.value = !isTermsAccepted.value;
+  }
+
+  void setDistrict(String district) {
+    districtController.text = district;
+    Get.back();
+  }
+
+  void setArea(String area) {
+    areaController.text = area;
+    Get.back();
   }
 
 

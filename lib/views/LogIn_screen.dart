@@ -133,7 +133,7 @@ class LoginScreen extends StatelessWidget {
                               ),
                               onPressed: () => authcontroller.Login(),
                               child: Text(
-                                "SIGN UP",
+                                "SIGN IN",
                                 style: TextStyle(
                                   color: Colors.white,
                                   fontSize: 16,

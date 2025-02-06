@@ -197,6 +197,197 @@ class SignupScreen extends StatelessWidget {
                           obscureText: true,
           
                         )),
+
+
+                        SizedBox(height: 10,),
+
+                        // District
+                        Text(
+                          "District",
+                          style: TextStyle(
+                            fontSize: 16,
+                            fontWeight: FontWeight.w300,
+                          ),
+                        ),
+                        SizedBox(height: 5,),
+
+                        GestureDetector(
+                          onTap: () {
+                            Get.bottomSheet(
+                              Container(
+                                decoration: BoxDecoration(
+                                  color: Colors.white,
+                                  borderRadius: BorderRadius.only(
+                                    topLeft: Radius.circular(20),
+                                    topRight: Radius.circular(20),
+                                  ),
+                                ),
+                                child: Column(
+                                  mainAxisSize: MainAxisSize.min,
+                                  children: [
+                                    Padding(
+                                      padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 18),
+                                      child: Text(
+                                        "Select District",
+                                        style: TextStyle(
+                                          fontSize: 20,
+                                          fontWeight: FontWeight.bold,
+                                        ),
+                                      ),
+                                    ),
+                                    // Divider(height: 1, thickness: 1, color: Colors.grey.shade300),
+                                    ...["Sylhet", "Moulvibazar", "Sunamganj", "Habiganj"]
+                                        .map((district) => Column(
+                                      children: [
+                                        ListTile(
+                                          contentPadding: EdgeInsets.symmetric(horizontal: 30),
+                                          leading: Icon(Icons.location_city, color: Colors.blue),
+                                          title: Text(
+                                              district,
+                                            style: TextStyle(
+                                                fontWeight: FontWeight.bold,
+                                            ),
+                                          ),
+                                          onTap: () {
+                                            authcontroller.setDistrict(district);
+                                            Get.back();
+                                          },
+                                        ),
+                                        Divider(height: 1, thickness: 1, color: Colors.grey.shade300),
+                                      ],
+                                    ))
+                                        .toList(),
+                                  ],
+                                ),
+                              ),
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.only(
+                                  topLeft: Radius.circular(16),
+                                  topRight: Radius.circular(16),
+                                ),
+                              ),
+                            );
+                          },
+                          child: AbsorbPointer(
+                            child: TextField(
+                              controller: authcontroller.districtController,
+                              decoration: InputDecoration(
+                                hintText: "Select District",
+                                hintStyle: TextStyle(
+                                  fontSize: 16,
+                                  fontWeight: FontWeight.w200,
+                                ),
+                                filled: true,
+                                fillColor: Colors.grey.shade50,
+                                border: OutlineInputBorder(
+                                  borderRadius: BorderRadius.circular(12),
+                                  borderSide: BorderSide.none,
+                                ),
+                                focusedBorder: OutlineInputBorder(
+                                  borderRadius: BorderRadius.circular(12),
+                                  borderSide: BorderSide.none,
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+
+
+                        SizedBox(height: 10),
+
+
+                        // Area
+                        Text(
+                          "Area",
+                          style: TextStyle(
+                            fontSize: 16,
+                            fontWeight: FontWeight.w300,
+                          ),
+                        ),
+                        SizedBox(height: 5,),
+
+                        GestureDetector(
+                          onTap: () {
+                            Get.bottomSheet(
+                              Container(
+                                decoration: BoxDecoration(
+                                  color: Colors.white,
+                                  borderRadius: BorderRadius.only(
+                                    topLeft: Radius.circular(20),
+                                    topRight: Radius.circular(20),
+                                  ),
+                                ),
+                                child: Column(
+                                  mainAxisSize: MainAxisSize.min,
+                                  children: [
+                                    Padding(
+                                      padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 18),
+                                      child: Text(
+                                        "Select Area",
+                                        style: TextStyle(
+                                          fontSize: 20,
+                                          fontWeight: FontWeight.bold,
+                                        ),
+                                      ),
+                                    ),
+                                    // Divider(height: 1, thickness: 1, color: Colors.grey.shade300),
+                                    ...["Mirjajangal", "Shamshernager", "Chatak", "Rashidpur"]
+                                        .map((district) => Column(
+                                      children: [
+                                        ListTile(
+                                          contentPadding: EdgeInsets.symmetric(horizontal: 30),
+                                          leading: Icon(Icons.location_city, color: Colors.blue),
+                                          title: Text(
+                                            district,
+                                            style: TextStyle(
+                                              fontWeight: FontWeight.bold,
+                                            ),
+                                          ),
+                                          onTap: () {
+                                            authcontroller.setArea(district);
+                                            Get.back();
+                                          },
+                                        ),
+                                        Divider(height: 1, thickness: 1, color: Colors.grey.shade300),
+                                      ],
+                                    ))
+                                        .toList(),
+                                  ],
+                                ),
+                              ),
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.only(
+                                  topLeft: Radius.circular(16),
+                                  topRight: Radius.circular(16),
+                                ),
+                              ),
+                            );
+                          },
+                          child: AbsorbPointer(
+                            child: TextField(
+                              controller: authcontroller.areaController,
+                              decoration: InputDecoration(
+                                hintText: "Select Area",
+                                hintStyle: TextStyle(
+                                  fontSize: 16,
+                                  fontWeight: FontWeight.w200,
+                                ),
+                                filled: true,
+                                fillColor: Colors.grey.shade50,
+                                border: OutlineInputBorder(
+                                  borderRadius: BorderRadius.circular(12),
+                                  borderSide: BorderSide.none,
+                                ),
+                                focusedBorder: OutlineInputBorder(
+                                  borderRadius: BorderRadius.circular(12),
+                                  borderSide: BorderSide.none,
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+
+                        SizedBox(height: 10,),
           
                         // Terms and Conditions
                         Row(
@@ -302,7 +493,10 @@ class SignupScreen extends StatelessWidget {
     return Container(
       height: 50,
       width: 80,
-      color: Colors.grey.shade200,
+      decoration: BoxDecoration(
+        color: Colors.grey.shade200,
+        borderRadius: BorderRadius.circular(7),
+      ),
       child: GestureDetector(
         onTap: () => Get.snackbar("Info", "Social login clicked"),
         child: Image.asset(assetPath, width: 40, height: 40),
